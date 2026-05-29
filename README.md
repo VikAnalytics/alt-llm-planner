@@ -1,8 +1,8 @@
-# gemini-interactive-planner
+# alt-llm-planner
 
-[![npm version](https://img.shields.io/npm/v/gemini-interactive-planner.svg)](https://www.npmjs.com/package/gemini-interactive-planner)
-[![license](https://img.shields.io/npm/l/gemini-interactive-planner.svg)](./LICENSE)
-[![node](https://img.shields.io/node/v/gemini-interactive-planner.svg)](https://nodejs.org)
+[![npm version](https://img.shields.io/npm/v/alt-llm-planner.svg)](https://www.npmjs.com/package/alt-llm-planner)
+[![license](https://img.shields.io/npm/l/alt-llm-planner.svg)](./LICENSE)
+[![node](https://img.shields.io/node/v/alt-llm-planner.svg)](https://nodejs.org)
 
 **Turn a multi-hour architectural planning session with Claude into a one-shot tool call.**
 
@@ -67,13 +67,13 @@ Illustrative. Actual savings scale with turn count and context size. Disclaimer 
 
 ```bash
 # 1. Wire the MCP server into Claude Code (user scope = works in every project)
-claude mcp add gemini-planner -s user -- npx -y gemini-interactive-planner
+claude mcp add alt-llm-planner -s user -- npx -y alt-llm-planner
 
 # 2. Configure: API key → tier → default model
-npx gemini-interactive-planner setup
+npx alt-llm-planner setup
 
 # 3. Install the Cursor / VS Code companion extension
-npx gemini-interactive-planner install
+npx alt-llm-planner install
 ```
 
 Then **reload your IDE window**.
@@ -148,16 +148,16 @@ You end up with **Gemini burning its free-tier budget on the exploratory part** 
 ## Commands
 
 ```
-gemini-interactive-planner serve     # MCP stdio server (default — what Claude Code runs)
-gemini-interactive-planner setup     # configure key, tier, model
-gemini-interactive-planner install   # install Cursor / VS Code extension
-gemini-interactive-planner status    # show config + install state
-gemini-interactive-planner help
+alt-llm-planner serve     # MCP stdio server (default — what Claude Code runs)
+alt-llm-planner setup     # configure key, tier, model
+alt-llm-planner install   # install Cursor / VS Code extension
+alt-llm-planner status    # show config + install state
+alt-llm-planner help
 ```
 
 ## Config
 
-Stored at `~/.gemini-interactive-planner/config.json` (mode `0600`).
+Stored at `~/.alt-llm-planner/config.json` (mode `0600`).
 
 Env var overrides (useful in CI or multi-user setups):
 
@@ -187,14 +187,14 @@ All IPC uses write-then-rename so readers never see partial files. Secrets live 
 | Symptom | Fix |
 | --- | --- |
 | `interactive_plan` not visible to Claude | Reload IDE window. Confirm with `claude mcp list`. |
-| No terminal opens on tool call | Run `npx gemini-interactive-planner install`, then reload IDE. |
-| `GEMINI_API_KEY not set` | Re-run `npx gemini-interactive-planner setup`, or export the env var. |
+| No terminal opens on tool call | Run `npx alt-llm-planner install`, then reload IDE. |
+| `GEMINI_API_KEY not set` | Re-run `npx alt-llm-planner setup`, or export the env var. |
 | Session hangs past 30 min | Bump `PLANNER_TIMEOUT_MS`. Session files in `os.tmpdir()` auto-sweep after 1h. |
-| Want to change default model | `npx gemini-interactive-planner setup` re-prompts the model picker. |
+| Want to change default model | `npx alt-llm-planner setup` re-prompts the model picker. |
 
 ## Security
 
-- `GEMINI_API_KEY` is stored at `~/.gemini-interactive-planner/config.json` with mode `0600`.
+- `GEMINI_API_KEY` is stored at `~/.alt-llm-planner/config.json` with mode `0600`.
 - Session IPC files live only in the user's `os.tmpdir()` and are deleted after the tool returns.
 - No telemetry. No network calls outside the Gemini API.
 - Never commit a `.env` containing a real key — `.gitignore` ships configured.

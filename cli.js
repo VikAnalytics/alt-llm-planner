@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const cmd = process.argv[2];
 
-const HELP = `gemini-interactive-planner <command>
+const HELP = `alt-llm-planner <command>
 
 Commands:
   serve              Run the MCP stdio server (default)

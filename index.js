@@ -12,8 +12,8 @@ const timeoutMs = Number(process.env.PLANNER_TIMEOUT_MS) || DEFAULT_TIMEOUT_MS;
 const config = await loadConfig();
 
 const server = new McpServer({
-  name: 'gemini-interactive-planner',
-  version: '1.0.0',
+  name: 'alt-llm-planner',
+  version: '0.3.0',
 });
 
 server.tool(
@@ -36,7 +36,7 @@ server.tool(
     const apiKey = resolveApiKey(config);
     if (!apiKey) {
       throw new Error(
-        'Gemini API key not set. Run `npx gemini-interactive-planner setup` or export GEMINI_API_KEY.'
+        'Gemini API key not set. Run `npx alt-llm-planner setup` or export GEMINI_API_KEY.'
       );
     }
 

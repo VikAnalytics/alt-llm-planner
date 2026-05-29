@@ -3,7 +3,7 @@ import os from 'os';
 import path from 'path';
 import { loadConfig, resolveApiKey, resolveModel, CONFIG_FILE } from './config.js';
 
-const EXT_PREFIX = 'local.gemini-interactive-planner-';
+const EXT_PREFIX = 'local.alt-llm-planner-';
 
 async function findInstalled(dir) {
   try {

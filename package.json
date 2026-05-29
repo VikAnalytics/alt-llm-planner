@@ -1,11 +1,11 @@
 {
-  "name": "gemini-interactive-planner",
-  "version": "0.2.0",
-  "description": "Interactive Gemini-powered planning as an MCP tool for Claude Code and Cursor.",
+  "name": "alt-llm-planner",
+  "version": "0.3.0",
+  "description": "Offload architectural planning Q&A to an alternate LLM (Gemini today) in a side terminal. MCP tool for Claude Code and Cursor. Returns a dense markdown blueprint to Claude.",
   "type": "module",
   "main": "index.js",
   "bin": {
-    "gemini-interactive-planner": "cli.js"
+    "alt-llm-planner": "cli.js"
   },
   "files": [
     "cli.js",
@@ -29,8 +29,18 @@
     "claude-code",
     "cursor",
     "planner",
-    "architect"
+    "architect",
+    "llm",
+    "ai"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VikAnalytics/alt-llm-planner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VikAnalytics/alt-llm-planner/issues"
+  },
+  "homepage": "https://github.com/VikAnalytics/alt-llm-planner#readme",
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

@@ -37,7 +37,7 @@ function activate(context) {
 
       launched.add(file);
       const terminal = vscode.window.createTerminal({
-        name: 'Gemini Planner',
+        name: 'Alt-LLM Planner',
         isTransient: true,
       });
       terminal.show();

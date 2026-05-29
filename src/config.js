@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import os from 'os';
 import path from 'path';
 
-export const CONFIG_DIR = path.join(os.homedir(), '.gemini-interactive-planner');
+export const CONFIG_DIR = path.join(os.homedir(), '.alt-llm-planner');
 export const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 export const DEFAULT_MODEL = 'gemma-3-27b-it';
 
