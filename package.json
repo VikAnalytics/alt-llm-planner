@@ -1,0 +1,40 @@
+{
+  "name": "gemini-interactive-planner",
+  "version": "0.2.0",
+  "description": "Interactive Gemini-powered planning as an MCP tool for Claude Code and Cursor.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "gemini-interactive-planner": "cli.js"
+  },
+  "files": [
+    "cli.js",
+    "index.js",
+    "src/",
+    "cursor-extension/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "setup": "node cli.js setup",
+    "install-ext": "node cli.js install",
+    "status": "node cli.js status"
+  },
+  "keywords": [
+    "mcp",
+    "gemini",
+    "claude",
+    "claude-code",
+    "cursor",
+    "planner",
+    "architect"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

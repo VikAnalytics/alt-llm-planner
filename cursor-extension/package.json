@@ -1,0 +1,10 @@
+{
+  "publisher": "local",
+  "name": "gemini-interactive-planner",
+  "displayName": "Gemini Interactive Planner",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.74.0" },
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {}
+}
