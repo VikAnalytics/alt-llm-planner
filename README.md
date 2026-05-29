@@ -21,6 +21,8 @@ Your main Claude conversation stays clean. Your token bill stays low. Your conte
   resumes implementation with the plan in context
 ```
 
+> **Multi-provider by design.** Gemini is the current default; the architecture is built to add Llama, Mistral, and other alternates without breaking the UX. If you want the **Gemini-only minimal flavor**, see the sibling package: [`gemini-interactive-planner`](https://github.com/VikAnalytics/gemini-interactive-planner).
+
 ---
 
 ## The problem
